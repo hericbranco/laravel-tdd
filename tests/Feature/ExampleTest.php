@@ -2,19 +2,18 @@
 
 namespace Tests\Feature;
 
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use mysql_xdevapi\DatabaseObject;
 use Tests\TestCase;
 
-class ExampleTest extends TestCase
+class ThreadsTest extends TestCase
 {
-    /**
-     * A basic test example.
-     *
-     * @return void
-     */
-    public function test_example()
+    use DatabaseMigrations;
+    /** @test */
+    public function a_user_can_browse_threads()
     {
-        $response = $this->get('/');
+        $response = $this->get('/threads');
 
         $response->assertStatus(200);
     }
