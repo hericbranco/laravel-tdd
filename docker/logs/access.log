@@ -15,3 +15,5 @@
 10.11.0.19 - - [09/Nov/2021:20:29:21 +0000] "GET /v1/administrador HTTP/1.0" 200 1187 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36 OPR/80.0.4170.63"
 10.11.0.19 - - [09/Nov/2021:20:30:15 +0000] "GET /v1/administrador HTTP/1.0" 500 189209 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36 OPR/80.0.4170.63"
 10.11.0.19 - - [09/Nov/2021:20:30:34 +0000] "GET /v1/administrador HTTP/1.0" 500 188702 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36 OPR/80.0.4170.63"
+10.11.0.4 - - [10/Nov/2021:23:16:33 +0000] "GET / HTTP/1.0" 200 17593 "http://dsa.localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36 OPR/80.0.4170.63"
+10.11.0.4 - - [10/Nov/2021:23:16:36 +0000] "GET /favicon.ico HTTP/1.0" 200 0 "http://laravel-tdd.localhost/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36 OPR/80.0.4170.63"
