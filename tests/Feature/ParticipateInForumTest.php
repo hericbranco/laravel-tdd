@@ -25,13 +25,24 @@ class ParticipateInForumTest extends TestCase
     /** @test */
     function an_authenticated_user_may_participate_in_forum_threads()
     {
-        $this->be($user = User::factory()->create());
+        $this->signIn();
         $thread = Thread::factory()->create();
         $reply = Reply::factory()->make();
         $this->post($thread->path().'/replies', $reply->toArray());
 
         $this->get($thread->path())
             ->assertSee($reply->body);
+    }
+
+    /** @test */
+    function an_reply_request_a_body()
+    {
+        $this->withExceptionHandling()
+            ->signIn();
+        $thread = Thread::factory()->create();
+        $reply = Reply::factory(['body' => null])->make();
+        $this->post($thread->path().'/replies', $reply->toArray())
+            ->assertSessionHasErrors('body');
     }
 }
 
