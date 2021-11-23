@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use App\Models\Channel;
 use App\Models\Reply;
 use App\Models\Thread;
+use App\Models\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use mysql_xdevapi\DatabaseObject;
@@ -52,4 +53,16 @@ class ReadThreadsTest extends TestCase
             ->assertSee($threadInChannel->title)
             ->assertDontSee($threadNotInChannel->title);
     }
+
+    /** @test */
+    function a_user_can_filter_threads_by_any_username()
+    {
+        $this->signIn(User::factory(['name' => 'testUser'])->create());
+        $threadBy = Thread::factory(['user_id' => auth()->id()])->create();
+        $threadOther = Thread::factory()->create();
+        $this->get('/threads?by=testUser')
+            ->assertSee($threadBy->title)
+            ->assertDontSee($threadOther->title);
+    }
+
 }
